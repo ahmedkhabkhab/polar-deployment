@@ -45,6 +45,8 @@ services:
       - BPL_DEBUG_PORT=9888
 
   api-gateway:
+    depends_on:
+      - polar-redis
     image: "api-gateway"
     container_name: "api-gateway"
     ports:
