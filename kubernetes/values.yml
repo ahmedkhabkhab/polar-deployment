@@ -1,6 +1,0 @@
-global:
-    postgresql:
-        auth:
-            database: polardb_catalog
-            username: ahmed
-            password: mypassword
