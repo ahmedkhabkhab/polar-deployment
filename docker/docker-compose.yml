@@ -107,7 +107,7 @@ services:
     container_name: "polar-keycloak"
     command: start-dev --import-realm # Start Keycloak in development mode
     volumes:
-      - ./keycloak:/opt/keycloack/data/import
+      - ./keycloak:/opt/keycloak/data/import
     environment:
       - KEYCLOAK_ADMIN=user
       - KEYCLOAK_ADMIN_PASSWORD=password
