@@ -61,6 +61,7 @@ services:
       - ORDER_SERVICE_URL=http://order-service:9002
       - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
       - SPRING_REDIS_HOST=polar-redis
+      - SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_KEYCLOAK_ISSUER_URI=http://polar-keycloak/realms/PolarBookshop
 
   dispatcher-service:
     depends_on:
