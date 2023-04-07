@@ -51,7 +51,7 @@ services:
       - SPRING_RABBITMQ_HOST=polar-rabbitmq
       - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI=http://host.docker.internal:8080/realms/PolarBookshop
       - JAVA_TOOL_OPTIONS=-javaagent:/workspace/BOOT-INF/lib/opentelemetry-javaagent-1.17.0.jar
-      - OTEL_SERVICE_NAME=catalog-service
+      - OTEL_SERVICE_NAME=order-service
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://tempo:4317
       - OTEL_METRICS_EXPORTER=none
     logging:
@@ -73,7 +73,7 @@ services:
       - BPL_DEBUG_ENABLED=true
       - BPL_DEBUG_PORT=9888
       - JAVA_TOOL_OPTIONS=-javaagent:/workspace/BOOT-INF/lib/opentelemetry-javaagent-1.17.0.jar
-      - OTEL_SERVICE_NAME=catalog-service
+      - OTEL_SERVICE_NAME=config-service
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://tempo:4317
       - OTEL_METRICS_EXPORTER=none
     logging:
@@ -98,7 +98,7 @@ services:
       - CATALOG_SERVICE_URL=http://catalog-service:9001
       - ORDER_SERVICE_URL=http://order-service:9002
       - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
-      - SPRING_REDIS_HOST=polar-redis
+      - SPRING_REDIS_HOST=api-gateway
       - SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_KEYCLOAK_ISSUER_URI=http://host.docker.internal:8080/realms/PolarBookshop
       - JAVA_TOOL_OPTIONS=-javaagent:/workspace/BOOT-INF/lib/opentelemetry-javaagent-1.17.0.jar
       - OTEL_SERVICE_NAME=catalog-service
@@ -126,7 +126,7 @@ services:
       - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
       - SPRING_RABBITMQ_HOST=polar-rabbitmq
       - JAVA_TOOL_OPTIONS=-javaagent:/workspace/BOOT-INF/lib/opentelemetry-javaagent-1.17.0.jar
-      - OTEL_SERVICE_NAME=catalog-service
+      - OTEL_SERVICE_NAME=dispatcher-service
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://tempo:4317
       - OTEL_METRICS_EXPORTER=none
     logging:
