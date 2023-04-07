@@ -231,7 +231,7 @@ services:
       - ./observability/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
 
   tempo:
-    image: grafana/tempo
+    image: grafana/tempo:1.5.0
     container_name: tempo
     command: -config.file /etc/tempo-config.yml
     ports:
