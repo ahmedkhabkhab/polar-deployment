@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - github.com/ahmedkhabkhab/api-gateway/k8s?ref=master
+
+patchesStrategicMerge:
+  - patch-env.yml
+
+configMapGenerator:
+  - behavior: merge
+    files:
+      - application-staging.yml
+    name: dispatcher-config
+images:
+  - name: api-gateway
+    newName: ghcr.io/ahmedkhabkhab/api-gateway
+    newTag: latest
+
+replicas:
+  - name: api-gateway
+    count: 2
