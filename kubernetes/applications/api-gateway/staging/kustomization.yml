@@ -10,7 +10,7 @@ configMapGenerator:
   - behavior: merge
     files:
       - application-staging.yml
-    name: dispatcher-config
+    name: api-gateway-config
 images:
   - name: api-gateway
     newName: ghcr.io/ahmedkhabkhab/api-gateway
