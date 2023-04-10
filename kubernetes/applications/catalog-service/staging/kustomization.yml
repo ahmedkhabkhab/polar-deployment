@@ -15,3 +15,7 @@ images:
   - name: catalog-service
     newName: ghcr.io/ahmedkhabkhab/catalog-service
     newTag: latest
+
+replicas:
+  - name: catalog-service
+    count: 2
