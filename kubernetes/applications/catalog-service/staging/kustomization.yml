@@ -11,3 +11,7 @@ configMapGenerator:
     files:
       - application-staging.yml
     name: catalog-config
+images:
+  - name: catalog-service
+    newName: ghcr.io/ahmedkhabkhab/catalog-service
+    newTag: latest
